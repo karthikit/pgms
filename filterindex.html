@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="filterapp.js"></script>
+    <title>filter</title>
+  </head>
+  <body ng-app = 'filApp'>
+    <h2>Custom Filter Demo</h2>
+    <div ng-controller = 'filController'>
+      Original: {{sayMessage()}}<br>
+      Likes: {{sayLikesMessage()}}<br>
+      LikesAll: {{sayLikesMessage() | likesall : "filter" : "and built-in filters" | uppercase }}<br>
+      </div>
+  </body>
+</html>

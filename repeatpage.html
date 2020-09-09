@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app = 'repApp'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="repeatapp.js"></script>
+    <title>shop list</title>
+  </head>
+  <body>
+    <div ng-controller = 'repController'>
+      <h2>Shop List</h2>
+      <ul>
+        <li ng-repeat="item in shopList">{{item}}</li>
+      </ul>
+      <div>Item 1 - Price: <input type="text" ng-model="shopListDetails[0].price"></div>
+      <div><h3>Add item in table: </h3>
+        <input type="text" ng-model="newItemName" placeholder="item name">
+        <input type="text" ng-model="newItemPrice" placeholder="item price"><br>
+        <button ng-click="addToTable()">Add to Table</button>
+      </div>
+      <h2>Shop List Details</h2>
+      <table border=1>
+        <tr ng-repeat="item in shopListDetails"><td>{{$index + 1}}</td><td>{{item.name}}</td><td>{{item.price | currency : "INR" : 2}}</td></tr>
+      </table>
+    </div>
+  </body>
+</html>

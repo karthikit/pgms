@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app = 'repApp'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="repeatfilterapp.js"></script>
+    <title>shop list</title>
+  </head>
+  <body>
+    <div ng-controller = 'repController'>
+      <h2>Shopping List</h2>
+      <input type=text ng-model="search1">
+      <ul>
+        <li ng-repeat="item in shopList | filter : search1">{{item}}</li>
+      </ul>
+      <h2>Pricing List</h2>
+      <input type=text ng-model="search2.name" placeholder="quantity filter">
+      <table border=1>
+        <tr><th>Items</th><th>Price</th><th>Quantity</th></tr>
+        <tr ng-repeat="item in shopListDetails | filter : search2">
+          <td>{{item.name | uppercase }}</td>
+          <td>{{item.price | currency : "&#8377"}}</td>
+          <td>{{item.quan}}</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
