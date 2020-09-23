@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app = 'styleApp'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="styleapp.js"></script>
+    
+    <title>Event Sample</title>
+  </head>
+  <body>
+    <div ng-controller = 'styleController'>
+        <h2>Built-in Directives</h2>
+        <form name="form">
+
+        <h3>NgDisabled</h3>
+        <label>Click me to Enable the Button: 
+        <input type="checkbox" 
+        ng-model="checked"></label><br/>
+        <button ng-model="button" 
+        ng-disabled="!checked">Button</button>
+
+        <h3>NgChange</h3>
+        <input type="checkbox" 
+        ng-model="confirmed" 
+        ng-change="change()"><br>
+        Counter: {{counter}}
+
+        <h3>NgList</h3>
+        <textarea ng-model="list" 
+        ng-list="," ng-trim="true">
+        </textarea>
+        {{ list}}
+        
+        <h3>NgMaxlength</h3>
+        <input type="number" 
+        ng-model="maxlength"><br>
+        This input is restricted by the current maxlength:
+        <input type="text" ng-model="model" 
+        ng-maxlength="maxlength"
+        name="input"><br>
+        input valid? = {{form.input.$valid}}<br>
+        Value = {{model}}
+        </form>
+    </div>
+  </body>
+</html>

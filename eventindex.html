@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app = 'eventApp'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="eventapp.js"></script>
+    <title>Event Sample</title>
+  </head>
+  <body>
+    <div ng-controller = 'eventController'>
+      <h2>Mouse Event Demo</h2>
+      <p ng-mousemove="mm=mm+1" 
+      ng-mouseover="mo=mo+1"
+      ng-mouseleave="ml=ml+1"
+      ng-click="c=c+1"
+      ng-mousedown="md=md+1"
+      ng-mouseup="mu=mu+1">
+        This is sample paragraph. Move the cursor over this.
+      </p>
+      <h4>Mouse Move: {{mm}}</h4>
+      <h4>Mouse Over: {{mo}}</h4>
+      <h4>Mouse Leave: {{ml}}</h4>
+      <h4>Mouse Click: {{c}}</h4>
+      <h4>Mouse Up: {{mu}}</h4>
+      <h4>Mouse Down: {{md}}</h4>
+      <h2>Key Event Demo</h2>
+      <input type="text" 
+      ng-keypress="kp1=kp1+1"
+      placeholder="Type string">
+      <h4>Length of String Entered: {{kp1}}</h4>
+      <textarea 
+      ng-keypress="kp2=kp2-1">
+      </textarea> ({{kp2}} words only allowed)
+    </div>
+  </body>
+</html>
