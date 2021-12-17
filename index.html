@@ -1,22 +1,16 @@
 <!DOCTYPE html>
-<head>
-    <title>Welcome to Webtechnology Course</title>
-</head>
-
-<link href="style.css" type = "text/css" rel="stylesheet"></link>
-<script type="text/javascript" src="scr.js"></script>
-
-<body>
-    <h2>Welcome to the class</h2>
-    <p>
-        This is web technologies course. 
-        The course is designed for giving practice on various web programming languages. 
-        This course covers the design, implementation, and testing of web-based applications including 
-        related software, database and interfaces. The students will learn about mark-up languages, 
-        scripting languages, interactive graphics and databases. It also covers social, ethical and 
-        security issues arising from the web and social software. The concepts will be illustrated with 
-        appropriate examples and tools.
-    </p>
-    <h3>Session 1 - Recap of HTML/CSS/JS</h3>
-    <h3>Session 2 - Web Development Tools - Git</h3>
-</body>
+<html ng-app = 'indApp'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="indApp.js"></script>
+    <title>shop list</title>
+  </head>
+  <body>
+    <div ng-controller = 'repController'>
+        <input type="text" ng-model="Name" placeholder="item name">
+        <input type="text" ng-model="Address" placeholder="item price"><br>
+        <button ng-click="addToTable()">Add to Table</button>
+    </div>
+  </body>
+</html>
